@@ -22,7 +22,7 @@ add()
             {val intent = Intent(this, Dashboard::class.java)
                 startActivity(intent)
 
-            },1000
+            },1500
 
         )
     }
