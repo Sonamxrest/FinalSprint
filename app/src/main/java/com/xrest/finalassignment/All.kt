@@ -15,7 +15,7 @@ var book:ArrayList<Booking> = ArrayList()
 
 fun add(){
 
-perso.add(Person("Sonam","Sjr",20,""))
+perso.add(Person("Sonam","sonam","sonam",""))
 
     food.add(
         Food(

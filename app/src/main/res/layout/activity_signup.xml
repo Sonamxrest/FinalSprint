@@ -55,67 +55,98 @@
                     android:orientation="vertical">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/textInputName"
-                        style="@style/CardView.Light"
-                        android:layout_marginTop="@dimen/loginViewsMargin">
 
-                        <EditText
-                            android:id="@+id/editTextName"
-                            style="@style/modifiedEditText"
-                            android:hint="Name"
-                            android:inputType="textPersonName"
-                            android:maxLines="1" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/textInputEmail"
                         style="@style/parent"
                         android:layout_marginTop="@dimen/loginViewsMargin">
 
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/blue_border_rounded_cornwe">
                         <EditText
-                            android:id="@+id/editTextEmail"
-                            style="@style/modifiedEditText"
-                            android:hint="@string/login_email_hint"
-                            android:inputType="textEmailAddress"
-                            android:maxLines="1" />
+                            android:id="@+id/fullname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/username_icon"
+                            android:background="@android:color/transparent"
+                            android:fontFamily="@font/poppins_regular"
+                            android:hint="Full Name"
+                            android:maxLines="2"
+                            android:paddingLeft="17dp"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            android:textSize="12sp" />
+                        </RelativeLayout>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/textInputMobile"
+
                         style="@style/parent"
                         android:layout_marginTop="@dimen/loginViewsMargin">
 
-                        <EditText
-                            android:id="@+id/editTextMobile"
-                            style="@style/modifiedEditText"
-                            android:hint="Mobile Number"
-                            android:inputType="phone"
-                            android:maxLines="1" />
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/blue_border_rounded_cornwe">
+                            <EditText
+                                android:id="@+id/username"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/username_icon"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/poppins_regular"
+                                android:hint="Username"
+                                android:maxLines="1"
+                                android:paddingLeft="17dp"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"
+                                android:textCursorDrawable="@drawable/cursor_color"
+                                android:textSize="12sp" />
+
+                        </RelativeLayout>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textInputPassword"
                         style="@style/parent"
                         android:layout_marginTop="@dimen/loginViewsMargin">
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/blue_border_rounded_cornwe">
+                            <EditText
+                                android:id="@+id/password"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/username_icon"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/poppins_regular"
+                                android:hint="Password"
+                                android:maxLines="1"
+                                android:paddingLeft="17dp"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"
+                                android:textCursorDrawable="@drawable/cursor_color"
+                                android:textSize="12sp" />
 
-                        <EditText
-                            android:id="@+id/editTextPassword"
-                            style="@style/modifiedEditText"
-                            android:hint="@string/login_password_hint"
-                            android:inputType="textPassword"
-                            android:maxLines="1" />
+                        </RelativeLayout>
+
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
                         android:id="@+id/cirRegisterButton"
-                        style="@style/loginButton"
+                        android:background="@drawable/view_bg"
+                        android:textColor="@color/whiteTextColor"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/loginViewsMargin"
                         android:text="Register"
                         app:initialCornerAngle="27dp"
                         app:spinning_bar_color="#FFF"
                         app:spinning_bar_padding="6dp"
-                        app:spinning_bar_width="4dp" />
+                        app:spinning_bar_width="4dp"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" />
 
                     <TextView
                         style="@style/parent"
