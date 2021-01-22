@@ -19,7 +19,7 @@ class Splash : AppCompatActivity() {
         supportActionBar?.hide()
 add()
         Handler().postDelayed(
-            {val intent = Intent(this, Dashboard::class.java)
+            {val intent = Intent(this, Login::class.java)
                 startActivity(intent)
 
             },1000

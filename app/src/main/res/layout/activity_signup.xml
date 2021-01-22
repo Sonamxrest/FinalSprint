@@ -135,7 +135,7 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
-                        android:id="@+id/cirRegisterButton"
+                        android:id="@+id/btn"
                         android:background="@drawable/view_bg"
                         android:textColor="@color/whiteTextColor"
                         android:layout_gravity="center_horizontal"
@@ -151,7 +151,7 @@
                     <TextView
                         style="@style/parent"
                         android:layout_marginTop="@dimen/loginViewsMargin"
-
+android:id="@+id/txt"
                         android:text="Already have an account?"
                         android:textAlignment="center"
                         android:textColor="@color/themeColor"
