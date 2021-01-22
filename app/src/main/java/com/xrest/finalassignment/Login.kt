@@ -11,7 +11,7 @@ import android.widget.TextView
 class Login : AppCompatActivity(), View.OnClickListener {
 
 
-    private lateinit var btn:Button
+    private lateinit var btn:TextView
     private lateinit var etUser:EditText
     private lateinit var etPassword:EditText
     private lateinit var signup :TextView
