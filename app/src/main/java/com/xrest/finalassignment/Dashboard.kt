@@ -21,7 +21,7 @@ class Dashboard : AppCompatActivity() {
         bn = findViewById(R.id.nav_view)
         currentFragmnet(RegisterFragment())
         bn.setOnNavigationItemSelectedListener(){
-            when(it.itemId)
+            when(it.itemId
             {
                 R.id.navigation_home->{
 
