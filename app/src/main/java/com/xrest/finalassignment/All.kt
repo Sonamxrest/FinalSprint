@@ -1,21 +1,15 @@
 package com.xrest.finalassignment
 
-import com.xrest.finalassignment.Class.Booking
 import com.xrest.finalassignment.Class.Food
 import com.xrest.finalassignment.Class.Person
 
 var food:ArrayList<Food> = ArrayList()
 var foods:ArrayList<Food> = ArrayList()
-var perso :ArrayList<Person> = ArrayList()
-var map:MutableMap<Person,String> = mutableMapOf()
-var book:ArrayList<Booking> = ArrayList()
 
 
 
 
 fun add(){
-
-perso.add(Person("Sonam","sonam","sonam",""))
 
     food.add(
         Food(

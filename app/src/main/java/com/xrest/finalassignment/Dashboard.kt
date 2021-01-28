@@ -6,8 +6,9 @@ import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.xrest.finalassignment.Fragmnet.AddFragment
-import com.xrest.finalassignment.Fragmnet.BookingFragment
 import com.xrest.finalassignment.Fragmnet.DashboardFragment
+import com.xrest.finalassignment.Fragmnet.RegisterFragment
+import com.xrest.finalassignment.Fragmnet.SeeFragment
 
 private lateinit var fl:FrameLayout
 private lateinit var bn:BottomNavigationView
@@ -18,18 +19,18 @@ class Dashboard : AppCompatActivity() {
         setContentView(R.layout.activity_dashboard)
         fl = findViewById(R.id.fl)
         bn = findViewById(R.id.nav_view)
-        currentFragmnet(DashboardFragment())
+        currentFragmnet(RegisterFragment())
         bn.setOnNavigationItemSelectedListener(){
             when(it.itemId)
             {
-                R.id.navigation_dashboard->{
+                R.id.navigation_home->{
 
                     currentFragmnet(DashboardFragment())
                 }
                 R.id.navigation_dashboard->{
-                    currentFragmnet(AddFragment())
+                    currentFragmnet(SeeFragment())
                 }
-                R.id.navigation_notifications->currentFragmnet(BookingFragment())
+                R.id.navigation_notifications->currentFragmnet(RegisterFragment())
 
             }
 

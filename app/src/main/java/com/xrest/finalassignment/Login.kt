@@ -7,6 +7,12 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import com.xrest.finalassignment.Class.Person
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class Login : AppCompatActivity(), View.OnClickListener {
 
@@ -40,8 +46,28 @@ class Login : AppCompatActivity(), View.OnClickListener {
         when(v?.id)
         {
             R.id.login->{
-                val intent = Intent(this,Dashboard::class.java)
-                startActivity(intent)
+
+                CoroutineScope(Dispatchers.IO).launch {
+
+                    var person: Person = UserDb.getInstance(this@Login).getUserDAO().login(etUser.text.toString(),etPassword.text.toString())
+                    withContext(Dispatchers.Main){
+                        if(person==null)
+                        {
+                            Toast.makeText(this@Login, "Invalid Credentials", Toast.LENGTH_SHORT).show()
+
+                        }
+                        else{
+                            startActivity(Intent(this@Login,Dashboard::class.java))
+                        }
+                    }
+
+
+                }
+
+
+
+
+
 
             }
             R.id.signup->{

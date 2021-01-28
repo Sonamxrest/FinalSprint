@@ -1,21 +1,15 @@
 package com.xrest.finalassignment.Adapter
 
 import android.app.AlertDialog
-import android.app.Dialog
 import android.content.Context
-import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.xrest.finalassignment.Class.Booking
 import com.xrest.finalassignment.Class.Food
-import com.xrest.finalassignment.Fragmnet.BookingFragment
 import com.xrest.finalassignment.R
-import com.xrest.finalassignment.book
-import com.xrest.finalassignment.perso
 
 class FoodAdapter(val lst:ArrayList<Food>, val context: Context):RecyclerView.Adapter<FoodAdapter.FoodHolder>() {
 
@@ -81,10 +75,10 @@ val alert = d.create()
 
             alert.setCancelable(true)
             alert.show()
-            BookingFragment().books?.notifyDataSetChanged()
+            //BookingFragment().books?.notifyDataSetChanged()
 notifyDataSetChanged()
         }
-        book.add(0,Booking(perso[0],a.toTypedArray()))
+
 
     }
 }
