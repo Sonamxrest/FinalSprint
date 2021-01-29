@@ -54,7 +54,7 @@ class FoodAdapter(val lst:MutableList<Food>, val context: Context):RecyclerView.
         holder.name.text = food.name
         holder.desc.text = food.description
         holder.price.text = food.price.toString()
-        holder.rating.rating =food.rating!!.toFloat()
+        holder.rating.rating = food!!.rating!!
         Glide.with(context).load(food.img).into(holder.img)
 
         holder.btn.setOnClickListener(){

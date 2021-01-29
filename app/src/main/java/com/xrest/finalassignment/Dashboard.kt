@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.xrest.finalassignment.Fragmnet.DashboardFragment
-import com.xrest.finalassignment.Fragmnet.FoodAddFragment
-import com.xrest.finalassignment.Fragmnet.RegisterFragment
-import com.xrest.finalassignment.Fragmnet.SeeFragment
+import com.xrest.finalassignment.Fragmnet.*
 
 private lateinit var fl:FrameLayout
 private lateinit var bn:BottomNavigationView
@@ -26,7 +23,7 @@ class Dashboard : AppCompatActivity() {
 
         if (type == "admin")
         {
-            currentFragmnet(SeeFragment())
+            currentFragmnet(RegisterFragment())
             bn.setOnNavigationItemSelectedListener(){
                 when(it.itemId)
                 {
@@ -37,9 +34,9 @@ class Dashboard : AppCompatActivity() {
                     R.id.navigation_dashboard->{
                         currentFragmnet(FoodAddFragment())
                     }
-                    R.id.navigation_notifications->currentFragmnet(DashboardFragment())
+                    R.id.navigation_notifications->currentFragmnet(FoodShowFragment())
 
-                }
+               }
 
 
                 true

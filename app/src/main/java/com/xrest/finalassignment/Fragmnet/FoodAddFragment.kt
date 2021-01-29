@@ -13,6 +13,7 @@ import com.xrest.finalassignment.UserDb
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class FoodAddFragment : Fragment() {
 
@@ -32,10 +33,17 @@ submit.setOnClickListener() {
 
     CoroutineScope(Dispatchers.IO).launch {
 
-        UserDb.getInstance(container!!.context).getFoodDAO().insertFood(Food(foodName.text.toString(),description.text.toString(),image.text.toString(),rating.text.toString().toFloat()))
-
+        UserDb.getInstance(container!!.context).getFoodDAO().insertFood(Food(foodName.text.toString(),description.text.toString(),image.text.toString(),rating.text.toString().toFloat(),price.text.toString().toFloat()))
+withContext(Dispatchers.Main){
+    foodName.setText(null)
+    description.setText(null)
+    rating.setText(null)
+    price.setText(null)
+    image.setText(null)
+}
 
     }
+
 
 
 
