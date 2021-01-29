@@ -80,7 +80,7 @@ login()
                 alert.setCancelable(true)
                 alert.show()
             }
-            R.id.signup->{
+            R.id.signup->
 
                
 startActivity(Intent(this@Login,MainActivity::class.java))
