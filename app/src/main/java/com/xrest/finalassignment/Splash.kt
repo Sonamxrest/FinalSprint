@@ -7,6 +7,10 @@ import android.os.Handler
 import android.widget.Toast
 import com.xrest.finalassignment.Class.Food
 import com.xrest.finalassignment.Class.Person
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
@@ -17,14 +21,12 @@ class Splash : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_front)
         supportActionBar?.hide()
+CoroutineScope(Dispatchers.IO).launch {
+    delay(2000)
 
-        Handler().postDelayed(
-            {val intent = Intent(this, Login::class.java)
-                startActivity(intent)
+    startActivity(Intent(this@Splash,Login::class.java))
 
-            },1000
-
-        )
+}
     }
 
 

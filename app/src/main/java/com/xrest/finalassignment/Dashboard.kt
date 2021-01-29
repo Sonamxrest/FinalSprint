@@ -36,7 +36,7 @@ class Dashboard : AppCompatActivity() {
                     }
                     R.id.navigation_notifications->currentFragmnet(FoodShowFragment())
 
-               }
+                }
 
 
                 true
@@ -44,6 +44,25 @@ class Dashboard : AppCompatActivity() {
 
         }
         else{
+
+            currentFragmnet(FoodShowFragment())
+            bn.setOnNavigationItemSelectedListener(){
+                when(it.itemId)
+                {
+                    R.id.navigation_home->{
+
+                        currentFragmnet(FoodShowFragment())
+                    }
+                    R.id.navigation_dashboard->{
+                        currentFragmnet(RegisterFragment())
+                    }
+                    R.id.navigation_notifications->currentFragmnet(SeeFragment())
+
+                }
+
+
+                true
+            }
 
 
         }
