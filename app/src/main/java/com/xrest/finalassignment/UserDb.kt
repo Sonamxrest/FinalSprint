@@ -5,10 +5,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.xrest.finalassignment.Class.Food
 import com.xrest.finalassignment.Class.Person
 
 @Database(
-    entities = [Person::class],
+    entities = [Person::class,Food::class],
     version =1
 
 )
@@ -16,6 +17,7 @@ abstract class UserDb :RoomDatabase() {
 
 
     abstract fun getUserDAO():UserDAO
+    abstract fun getFoodDAO():FoodDAO
 
     companion object{
         @Volatile

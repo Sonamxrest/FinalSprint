@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.xrest.finalassignment.Fragmnet.AddFragment
 import com.xrest.finalassignment.Fragmnet.DashboardFragment
+import com.xrest.finalassignment.Fragmnet.FoodAddFragment
 import com.xrest.finalassignment.Fragmnet.RegisterFragment
 import com.xrest.finalassignment.Fragmnet.SeeFragment
 
@@ -19,24 +19,42 @@ class Dashboard : AppCompatActivity() {
         setContentView(R.layout.activity_dashboard)
         fl = findViewById(R.id.fl)
         bn = findViewById(R.id.nav_view)
-        currentFragmnet(RegisterFragment())
-        bn.setOnNavigationItemSelectedListener(){
-            when(it.itemId)
-            {
-                R.id.navigation_home->{
 
-                    currentFragmnet(DashboardFragment())
-                }
-                R.id.navigation_dashboard->{
-                    currentFragmnet(SeeFragment())
-                }
-                R.id.navigation_notifications->currentFragmnet(RegisterFragment())
 
+        var type = intent.getStringExtra("type")
+
+
+        if (type == "admin")
+        {
+            currentFragmnet(SeeFragment())
+            bn.setOnNavigationItemSelectedListener(){
+                when(it.itemId)
+                {
+                    R.id.navigation_home->{
+
+                        currentFragmnet(SeeFragment())
+                    }
+                    R.id.navigation_dashboard->{
+                        currentFragmnet(FoodAddFragment())
+                    }
+                    R.id.navigation_notifications->currentFragmnet(DashboardFragment())
+
+                }
+
+
+                true
             }
 
-
-            true
         }
+        else{
+
+
+        }
+
+
+
+
+
 
     }
 

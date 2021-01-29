@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.xrest.finalassignment.Class.Food
 import com.xrest.finalassignment.R
 
-class Food_Adpater(val lst:ArrayList<Food>,val context:Context):RecyclerView.Adapter<Food_Adpater.FoodHolder>() {
+class Food_Adpater(val lst:MutableList<Food>,val context:Context):RecyclerView.Adapter<Food_Adpater.FoodHolder>() {
 
     class FoodHolder(view: View):RecyclerView.ViewHolder(view){
 

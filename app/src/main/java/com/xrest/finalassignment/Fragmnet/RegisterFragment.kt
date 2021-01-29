@@ -1,6 +1,7 @@
 package com.xrest.finalassignment.Fragmnet
 
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import android.widget.RadioButton
 import android.widget.Toast
 import br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
 import com.xrest.finalassignment.Class.Person
+import com.xrest.finalassignment.Login
 import com.xrest.finalassignment.R
 import com.xrest.finalassignment.UserDb
 import kotlinx.coroutines.CoroutineScope
@@ -28,6 +30,7 @@ class RegisterFragment : Fragment() {
 
         var view =inflater.inflate(R.layout.fragment_register, container, false)
         var fullname = view.findViewById(R.id.fullname) as EditText
+        var admin :RadioButton = view.findViewById(R.id.admin)
         var male :RadioButton = view.findViewById(R.id.male)
         var female :RadioButton = view.findViewById(R.id.female)
         var others :RadioButton = view.findViewById(R.id.others)
@@ -40,6 +43,16 @@ class RegisterFragment : Fragment() {
 
             var gender =""
             var img=""
+            var type=""
+            if(admin.isChecked)
+            {
+                type="admin"
+            }
+            else{
+
+                type ="user"
+            }
+
             if(male.isChecked)
             {
                 gender ="Male"
@@ -61,9 +74,15 @@ class RegisterFragment : Fragment() {
 
 
             CoroutineScope(Dispatchers.IO).launch {
-                UserDb.getInstance(container!!.context).getUserDAO().insert(Person(fullname.text.toString(),gender,username.text.toString(),password.text.toString(),img))
+                UserDb.getInstance(container!!.context).getUserDAO().insert(Person(fullname.text.toString(),gender,username.text.toString(),password.text.toString(),img,type))
 withContext(Dispatchers.Main){
     Toast.makeText(container!!.context, "User Inserted", Toast.LENGTH_SHORT).show()
+
+    startActivity(Intent(container!!.context,Login::class.java))
+
+
+
+
 
 
 }

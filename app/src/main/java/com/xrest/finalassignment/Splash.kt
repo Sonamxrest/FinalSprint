@@ -17,7 +17,7 @@ class Splash : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_front)
         supportActionBar?.hide()
-add()
+
         Handler().postDelayed(
             {val intent = Intent(this, Login::class.java)
                 startActivity(intent)
@@ -29,42 +29,6 @@ add()
 
 
 
-    fun loadTxt(){
-        try{
-            val path = openFileInput("Food.txt")
-            val inputStreamReader = InputStreamReader(path)
-            val bf:BufferedReader = BufferedReader(inputStreamReader)
-            for(line in bf.lines())
-            {
-
-
-                val d = line.split(" , ")
-                lst.add(
-                    Food(
-                        d[0].toInt(),
-                        d[1].toString(),
-                        d[2].toString(),
-                        d[3].toString()
-
-                    )
-                )
-
-
-            }
-        }
-        catch(i:IOException)
-        {
-            Toast.makeText(this, "${i.localizedMessage}", Toast.LENGTH_SHORT).show()
-        }
-
-
-
-
-
-
-
-
-    }
 
 
 

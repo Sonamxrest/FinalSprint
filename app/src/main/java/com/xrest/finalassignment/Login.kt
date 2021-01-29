@@ -57,7 +57,9 @@ class Login : AppCompatActivity(), View.OnClickListener {
 
                         }
                         else{
-                            startActivity(Intent(this@Login,Dashboard::class.java))
+                         var intent=   Intent(this@Login,Dashboard::class.java)
+                            intent.putExtra("type",person.type)
+                            startActivity(intent)
                         }
                     }
 
@@ -72,8 +74,7 @@ class Login : AppCompatActivity(), View.OnClickListener {
             }
             R.id.signup->{
 
-                val intent = Intent(this,SignupActivity::class.java)
-                startActivity(intent)
+               
 
 
             }

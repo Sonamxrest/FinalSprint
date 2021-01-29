@@ -11,8 +11,6 @@ import com.xrest.finalassignment.Class.Food
 import com.xrest.finalassignment.Adapter.FoodAdapter
 import com.xrest.finalassignment.Adapter.Food_Adpater
 import com.xrest.finalassignment.R
-import com.xrest.finalassignment.food
-import com.xrest.finalassignment.foods
 
 
 class DashboardFragment : Fragment() {
@@ -29,9 +27,9 @@ class DashboardFragment : Fragment() {
      val rv: RecyclerView = view.findViewById(R.id.rv)
      val rv2: RecyclerView = view.findViewById(R.id.rv2)
      rv.layoutManager = LinearLayoutManager(container?.context, LinearLayoutManager.VERTICAL,false)
-     rv.adapter = FoodAdapter(food, container!!.context)
+   //  rv.adapter = FoodAdapter(food, container!!.context)
      rv2.layoutManager = LinearLayoutManager(container?.context, LinearLayoutManager.HORIZONTAL,false)
-     rv2.adapter = Food_Adpater(foods, container!!.context)
+    // rv2.adapter = Food_Adpater(foods, container!!.context)
      return view
     }
 }
